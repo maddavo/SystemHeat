@@ -115,7 +115,6 @@ namespace SystemHeat
       heatModule.AddFlux(moduleID, 0f, heatPump.IsCooling ? -maxCooling : 0f, false);
     }
 
-    public void Update() { if (HighLogic.LoadedSceneIsEditor) heatModule?.AddFlux(moduleID, 0f, 0f, false); }
     public void OnDisable() => heatModule?.AddFlux(moduleID, 0f, 0f, false);
   }
 }
