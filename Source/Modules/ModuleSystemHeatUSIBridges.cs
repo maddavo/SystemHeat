@@ -23,7 +23,11 @@ namespace SystemHeat
         .OfType<ModuleResourceConverter>().ToList();
     }
 
-    public void FixedUpdate() => UpdateFlux(false);
+    public void FixedUpdate()
+    {
+      if (!HighLogic.LoadedSceneIsEditor)
+        UpdateFlux(false);
+    }
 
     public void UpdateFlux(bool editor)
     {
@@ -65,7 +69,11 @@ namespace SystemHeat
         .OfType<ModuleResourceHarvester>().ToList();
     }
 
-    public void FixedUpdate() => UpdateFlux(false);
+    public void FixedUpdate()
+    {
+      if (!HighLogic.LoadedSceneIsEditor)
+        UpdateFlux(false);
+    }
 
     public void UpdateFlux(bool editor)
     {
